@@ -12,10 +12,12 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
 Plugin 'basepi/vim-conque'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
@@ -23,6 +25,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'suan/vim-instant-markdown'
 
 " python
 Plugin 'kevinw/pyflakes-vim'
@@ -44,6 +48,7 @@ Plugin 'terryma/vim-multiple-cursors'
 
 " 快速注释
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
