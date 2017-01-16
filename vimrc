@@ -1,6 +1,5 @@
-"自己定义vimrc常见设置和一些键位的设置
-
-"---------------- 加载插件管理文件 --------------------
+" 自己定义vimrc常见设置和一些键位的设置
+" ---------------- 加载插件管理文件 --------------------
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
 endif
@@ -24,7 +23,9 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-colorscheme molokai        " 配色主题
+"colorscheme molokai        " 配色主题
+colorscheme solarized        " 配色主题
+"colorscheme dracula        " 配色主题
 
 set go=
 set t_Co=256
@@ -34,7 +35,7 @@ set guioptions-=m
 set guifont=Inconsolata-g:h14
 
 set autoread                 " 文件修改之后自动载入。
-set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
+"set shortmess=atI            " 启动的时候不显示那个援助索马里儿童的提示
 
 set laststatus=2
 set confirm                  " 取消光标闪烁
@@ -70,6 +71,13 @@ set foldenable               " 代码折叠
 set foldmethod=indent
 set foldlevel=99             
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929 
+match OverLength /\%81v.\+/
+
+let g:airline#extensions#tabline#enabled = 1
+map gn :bn<cr>
+map gb :bp<cr>
+map gd :bd<cr>
 
 " 代码折叠自定义快捷键
 let g:FoldMethod = 0
@@ -86,6 +94,8 @@ endfun
 
 set smartindent              " 智能缩进
 set autoindent               " 自动缩进
+
+"let g:auto_save = 1          " 自动保存
 
 "------------------------------- tab 相关设置 ---------------------
 set tabstop=4                " 设置tab的宽度
@@ -146,6 +156,10 @@ noremap w<right> <c-w><right>
 noremap wl <c-w><right>
 noremap w<down> <c-w><down>
 noremap wj <c-w><down>
+vmap <c-c> "+y"
+
+map <S-Left> :tabp<CR>
+map <S-Right> :tabn<CR>
 
 " python 文件的一般设置
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
@@ -311,7 +325,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 " 跳转到定义处, 分屏打开
 let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
 " old version
 if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
@@ -332,3 +348,5 @@ let g:ycm_filetype_blacklist = {
 
 
 let g:ag_prg = "ag --nogroup --nocolor --column"
+
+let g:ycm_path_to_python_interpreter = "/usr/local/bin/python"

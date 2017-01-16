@@ -16,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
 Plugin 'basepi/vim-conque'
 
+Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
@@ -27,6 +28,10 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'suan/vim-instant-markdown'
+Plugin '907th/vim-auto-save'
+Plugin 'dracula/vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'godlygeek/tabular'
 
 " python
 Plugin 'kevinw/pyflakes-vim'
@@ -36,9 +41,9 @@ Plugin 'python.vim--Vasiliev'
 Plugin 'hynek/vim-python-pep8-indent'
 
 " golang
-Plugin 'fatih/vim-go'
 Plugin 'dgryski/vim-godef'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'Blackrush/vim-gocode'
 
 " markdown
 Plugin 'plasticboy/vim-markdown'
