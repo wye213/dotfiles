@@ -1,4 +1,5 @@
 " 自己定义vimrc常见设置和一些键位的设置
+
 " ---------------- 加载插件管理文件 --------------------
 if filereadable(expand("~/.vimrc.bundles"))
     source ~/.vimrc.bundles
@@ -14,7 +15,7 @@ let g:mapleader = ','
 "------------------------------- 基本设置 -----------------------------------
 
 "开启语法高亮
-"syntax enable 该命令只在当前文件有效
+syntax enable 该命令只在当前文件有效
 syntax on " 所有缓冲区文件都有效
 
 "-------------- 文件检测 ----------------------
@@ -24,8 +25,8 @@ filetype plugin on
 filetype plugin indent on
 
 "colorscheme molokai        " 配色主题
-colorscheme solarized        " 配色主题
-"colorscheme dracula        " 配色主题
+"colorscheme solarized        " 配色主题
+colorscheme dracula        " 配色主题
 
 set go=
 set t_Co=256
@@ -47,8 +48,8 @@ set cursorcolumn             " 突出显示当前列
 set cursorline               " 突出显示当前行
 
 set title 
-set novisualbell
-set noerrorbells
+set novisualbell             " 不要闪烁
+set noerrorbells             " 不让vim发出滴滴声
 
 set magic
 
@@ -59,15 +60,15 @@ set nowrap                   " 取消换行
 set showcmd                  " 在状态栏显示正在输入的命令
 set showmode                 " 显示vim模式
 
-set showmatch                " 括号匹配，高亮
-set matchtime=1         
+set showmatch                " 高亮匹配的括号
+set matchtime=1              " 匹配括号高亮的时间（单位是十分之一秒）
 
 set hlsearch                 " 高亮搜索的文本
-set incsearch                " 即时搜索
+set incsearch                " 即时搜索，在搜索时，输入的词句的逐字符高亮（类似firefox的搜索）
 set ignorecase               " 搜索忽略大小写
 set smartcase                " 有一个或以上大写字母时仍大小敏感
 
-set foldenable               " 代码折叠
+set foldenable               " 用空格键来开关代码折叠
 set foldmethod=indent
 set foldlevel=99             
 
@@ -322,7 +323,7 @@ let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
 let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-" 跳转到定义处, 分屏打开
+" YouCompleteMe代码跳转, 分屏打开
 let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gh :YcmCompleter GoToDeclaration<CR>
